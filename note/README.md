@@ -157,10 +157,9 @@
   - 添加值
   - UpdateData(TRUE);——获取编辑框的文本
   - UpdateData(FALSE);——赋予编辑框的文本
+  - 参考下图
 
   ![](.\注册2.png)
-  
-  
 
 - 手动添加工具栏按钮响应消息
 
@@ -227,10 +226,11 @@
   //删除所有行数据
   m_daybill.DeleteAllItems();
   
-//获取当前鼠标点击的行数，从0开始，没有则返回-1
+  //获取当前鼠标点击的行数，从0开始，没有则返回-1
   int i = m_foodMenu.GetSelectionMark();//获取序号
-  ~~~
   
+  
+  ~~~
 
 - NM_DBLICK列表双击事件
 
@@ -246,9 +246,11 @@
     	OnBnClickedButtonjiacai();
     	*pResult = 0;
     }
-    ~~~
+  	~~~
 
   
+
+
 
 
 
@@ -278,6 +280,8 @@
   //查找选择的序号，从0开始
   int i=m_dropList.GetCurSel();
   ~~~
+  
+  
 
 - 下拉框改变消息响应
 
@@ -477,24 +481,5 @@
   ~~~
 
 - MFC的`atoi`和`atof`函数
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
