@@ -2,7 +2,7 @@
 
 - 基本结构
 
-  ![](.\餐饮1.bmp)
+  ![](./餐饮1.bmp)
 
 - 包含菜单栏、工具栏、状态栏
 
@@ -150,14 +150,13 @@
 
 - 设计界面
 
-  ![](.\注册3.bmp)
+  ![](./注册3.bmp)
 
 - 利用类向导，设计Edit编辑框变量
 
   - 添加值
   - UpdateData(TRUE);——获取编辑框的文本
   - UpdateData(FALSE);——赋予编辑框的文本
-  - 参考下图
 
   ![](.\注册2.png)
 
@@ -191,7 +190,7 @@
 
 - 设置view属性为report
 
-  ![](.\list.bmp)
+  ![](./list.bmp)
 
   
 
@@ -228,17 +227,17 @@
   
   //获取当前鼠标点击的行数，从0开始，没有则返回-1
   int i = m_foodMenu.GetSelectionMark();//获取序号
-  
-  
   ~~~
+  
+  
 
 - NM_DBLICK列表双击事件
 
   - ON_NOTIFY(NM_DBLCLK, IDC_diancai1, &CDiancaiDlg::OnDblclkDiancai1)
 
-  - ![](.\开台2.bmp)
+  - ![](./开台2.bmp)
 
-  - ~~~c++
+   ~~~c++
     void CDiancaiDlg::OnDblclkDiancai1(NMHDR *pNMHDR, LRESULT *pResult)
     {
     	LPNMITEMACTIVATE pNMItemActivate = reinterpret_cast<LPNMITEMACTIVATE>(pNMHDR);
@@ -246,11 +245,9 @@
     	OnBnClickedButtonjiacai();
     	*pResult = 0;
     }
-  	~~~
+    ~~~
 
   
-
-
 
 
 
@@ -260,7 +257,7 @@
 
 - 属性Type选择为下拉列表
 
-  ![](.\加减菜1.bmp)
+  ![](./加减菜1.bmp)
 
 - 常见用法，m_nameDesk是绑定的控件变量名称
 
@@ -280,16 +277,14 @@
   //查找选择的序号，从0开始
   int i=m_dropList.GetCurSel();
   ~~~
-  
-  
 
 - 下拉框改变消息响应
 
   - ON_CBN_SELCHANGE(IDC_DesknameList, &CIndeFoodDlg::OnSelchangeDesknamelist)
 
-  - ![](.\加减菜2.bmp)
+  - ![](./加减菜2.bmp)
 
-  - ~~~c++
+   ~~~c++
     //下拉框变化消息处理
     void CIndeFoodDlg::OnSelchangeDesknamelist()
     {
@@ -327,7 +322,7 @@
 
 - 头文件添加tab变量名并用类向导关联，同时添加子对话框的变量，注意子对话框的属性的`Style`选择`Child`。
 
-  ![](.\tab.bmp)
+  ![](./tab.bmp)
 
   ~~~c++
   CTabCtrl m_tabR;
@@ -381,7 +376,7 @@
   CString str = (char *)(_bstr_t)m_pRecord->GetCollect("桌号");
   ~~~
 
-- ~~~c++
+  ~~~c++
   //插入或更新数据
   CString sql1;
   sql1.Format("select * from dayBill where [日期]='%s'", dayTime);
@@ -399,13 +394,13 @@
   }
   ~~~
 
-- ~~~c++
+  ~~~c++
   _bstr_t sqlToExecute = "select * from Login where [UserName]='" + m_Name + "' and [password]='" + m_Secret + "'";
   
   m_pRecord = theApp.m_pConnection->Execute(sqlToExecute, NULL, adCmdText);
   ~~~
 
-- ~~~c++
+  ~~~c++
   //删除原数据库
   int name_desk = atoi(str1);
   CString sql;
@@ -414,7 +409,7 @@
   theApp.m_pConnection->Execute((_bstr_t)sql, NULL, adCmdText);
   ~~~
 
-- ~~~c++
+  ~~~c++
   //查询数据
   _bstr_t sql = "select * from tableuse";
   m_pRecord = theApp.m_pConnection->Execute(sql, NULL, adCmdText);
@@ -446,7 +441,7 @@
 
 - 修改默认的Afxmessagebox的标题——AFX_IDS_APP_TITLE，添加到资源文件的string table里面
 
-  ![](.\标题.bmp)
+  ![](./标题.bmp)
 
 - 插入数据库表的列最好加[]
 
@@ -481,5 +476,6 @@
   ~~~
 
 - MFC的`atoi`和`atof`函数
+
 
 
